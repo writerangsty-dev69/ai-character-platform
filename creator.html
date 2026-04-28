@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create a Character</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>✨ Create Your AI Character</h1>
+        <a href="index.html">← Back to home</a>
+
+        <form id="creator-form" class="creator-form">
+            <div class="form-group">
+                <label>Character Name</label>
+                <input type="text" id="char-name" placeholder="e.g., Obsessive CEO" required>
+            </div>
+
+            <div class="form-group">
+                <label>Personality / Description</label>
+                <textarea id="char-personality" rows="4" placeholder="You are a cold, possessive CEO who secretly has a soft spot. Speak in short, commanding sentences." required></textarea>
+                <small>This controls how the AI acts — be detailed!</small>
+            </div>
+
+            <div class="form-group">
+                <label>Avatar URL (optional)</label>
+                <input type="url" id="char-avatar" placeholder="https://...">
+            </div>
+
+            <button type="submit">✨ Create Character</button>
+        </form>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('creator-form').addEventListener('submit', createNewCharacter);
+    </script>
+</body>
+</html>
