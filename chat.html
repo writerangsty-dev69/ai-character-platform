@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat with AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container chat-container">
+        <div id="char-header" class="char-header">
+            <img id="char-avatar" src="" alt="">
+            <h2 id="char-name">Loading...</h2>
+            <a href="index.html" class="back-link">← Change character</a>
+        </div>
+
+        <div id="chat-messages" class="chat-messages">
+            <div class="system-message">Start chatting...</div>
+        </div>
+
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Type your message..." onkeypress="if(event.key==='Enter') sendMessage()">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Get character ID from URL (?id=123)
+        const urlParams = new URLSearchParams(window.location.search);
+        const characterId = urlParams.get('id');
+        
+        if (characterId) {
+            loadCharacter(characterId);
+        } else {
+            document.getElementById('char-name').innerText = 'No character selected';
+        }
+    </script>
+</body>
+</html>
